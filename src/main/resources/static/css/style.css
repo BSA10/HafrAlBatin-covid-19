@@ -1,0 +1,133 @@
+/*@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);*/
+/*@import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);*/
+
+@font-face {
+    font-family: 'IBMPlexArabic';
+    src: url("../fonts/IBMPlexArabic-Regular.ttf") format('truetype');
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+}
+
+html {
+    /*font-family: 'Droid Arabic Kufi', 'Tahoma', serif;*/
+    /*font-size: 16px;*/
+
+}
+
+body{
+    background-color: #fbfbfb;
+    color: #080d1d;
+    font-family: 'IBMPlexArabic' ,sans-serif;
+}
+
+.logo{
+    font-size: 36px;
+    font-weight: bold;
+}
+.line{
+    width: 50%;
+    border-bottom: 0.5px solid;
+}
+
+.border {
+    background-color: white;
+    border-radius: 1rem;
+
+}
+
+.number {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.label{
+    /*font-family: 'Droid Arabic Naskh', serif;*/
+    font-family: 'IBMPlexArabic' ,sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.details-btn{
+    background-color: #6499a4;
+    width: 25%;
+}
+
+th {
+    text-align: center;
+}
+td {
+
+    text-align: center;
+}
+
+
+.hafar-albatin-details{
+    font-size: 24px;
+    font-weight: bold;
+
+}
+.border-data {
+    width: 13%;
+}
+
+@media only screen and (max-width: 1170px) {
+    .border-data {
+        width: 20%;
+    }
+}
+
+.all-cases{
+    color: #a40700;
+}
+
+.recovered-cases{
+    color: green;
+}
+.death-cases{
+    color: red;
+}
+.active-cases{
+    color: burlywood;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+.line-footer{
+    width: 25%;
+    border-bottom: 0.5px solid;
+}
+
+.tableFixHead {
+    overflow-y: auto;
+    height: 500px;
+}
+.tableFixHead thead th {
+    position: sticky;
+    top: 0;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th,
+td {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+}
+th {
+    background: #343a40;
+}
+
+.copyright{
+    font-weight: bold;
+}
+
+
+
+

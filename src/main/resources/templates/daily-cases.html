@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Cases Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container ">
+
+    <nav class="pb-3 pt-3 m-2">
+        <div class="d-flex justify-content-between">
+            <span>
+                <a th:href="@{/}" class="btn btn-light">الرجوع</a>
+            </span>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <span class="hafar-albatin-details">احصائيات محافظة حفر الباطن</span>
+        </div>
+        <hr class="line">
+    </nav>
+
+    <div class="tableFixHead">
+        <table class="table ">
+            <thead class="table-dark ">
+            <tr>
+                <th >التاريخ</th>
+                <th>الفحوصات</th>
+                <th>التعافي</th>
+                <th>الوفيات</th>
+                <th>الحالات</th>
+                <th>المحافظة</th>
+                <th>ID</th>
+            </tr>
+            </thead>
+
+            <tbody  th:each="case : ${cases}">
+                    <td th:text="${case.reported_at}">
+                    <td th:text="${case.tested}">
+                    <td th:text="${case.recovered}">
+                    <td th:text="${case.deaths}">
+                    <td th:text="${case.confirmed}">
+                    <td th:text="${case.name_ar}">
+                    <td th:text="${case.ID}">
+            </tbody>
+
+
+
+        </table>
+
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

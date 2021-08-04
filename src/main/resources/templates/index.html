@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Covid-19</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<div class="container">
+
+    <div class="d-flex justify-content-center pt-5 pr-5">
+        <span class="logo">حفر الباطن</span>
+    </div>
+    <hr class="line">
+
+
+
+    <div th:with="governorates=${Governorates}">
+        <div class="d-flex flex-row-reverse justify-content-center">
+
+                <div class="border border-data shadow bg-body m-2">
+                    <label class="label d-flex d-flex justify-content-center">الحالات</label>
+                    <span class="number all-cases d-flex justify-content-center" th:text="${governorates.TotalConfirmed}"></span>
+                </div>
+                <div class="border border-data shadow bg-body m-2">
+                        <label class="label d-flex justify-content-center">التعافي</label>
+                        <span class="number recovered-cases d-flex justify-content-center" th:text="${governorates.TotalRecovered}"></span>
+                </div>
+        </div>
+        <div class="d-flex flex-row-reverse justify-content-center">
+            <div class="border border-data shadow bg-body m-2">
+                <label class="label d-flex justify-content-center">الوفيات</label>
+                <span class="number death-cases d-flex justify-content-center" th:text="${governorates.TotalDeaths}"></span>
+            </div>
+            <div class="border border-data shadow bg-body m-2">
+                <label class="label d-flex justify-content-center">النشطة</label>
+                <span class="number active-cases d-flex justify-content-center" th:text="${governorates.TotalActive}"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="details pt-5">
+        <div class="d-flex justify-content-center">
+        <a th:href="@{/daily-cases}" class="details-btn btn">للمزيد من التفاصيل</a>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <hr class="line-footer">
+    <div th:object="${lastUpdate}">
+        <p>
+            <label class="time-last-update" th:text="${lastUpdate}"></label>
+            آخر تحديث في
+        </p>
+    </div>
+    <div>
+        <div>
+            <div>
+                <a th:href="@{http://www.twitter.com/xp187}">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/twitter-circled--v1.png"/>
+                </a>
+                <a th:href="@{http://www.github.com/bsa10}">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/github.png"/>
+                </a>
+            </div>
+
+
+        </div>
+        <p class="copyright">تطوير © <a class="copyright" href="http://www.twitter.com/xp187">بسّام</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
