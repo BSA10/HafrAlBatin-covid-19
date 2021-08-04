@@ -1,8 +1,8 @@
 
-# Hafar Albatin Covid-19 Dashboard
+# **Hafar Albatin Covid-19 Dashboard**
 
-I make a simple dashboard for Hafar Albatin Governorates 
-to track the covid-19 about cases.I used Moh.gov.sa statics 
+I make a simple dashboard for Hafar Albatin Governorates<br>
+to track the covid-19 about cases.I used Moh.gov.sa statics<br>
 to grab all the data.
 
 ## How to run
@@ -15,6 +15,6 @@ mvn spring-boot:run
 ```
 
 ## Contact
-[Email](mailto:so-ld@hotmail.com)
-[Twitter](https://www.twitter.com/xp187)
+* [Email](mailto:so-ld@hotmail.com)
+* [Twitter](https://www.twitter.com/xp187)
 
