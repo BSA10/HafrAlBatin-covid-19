@@ -1,9 +1,14 @@
 package sa.hafralbatin.covid19.model;
 
 import lombok.*;
+import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
+
+
+
 
 @Data
 @NoArgsConstructor @AllArgsConstructor

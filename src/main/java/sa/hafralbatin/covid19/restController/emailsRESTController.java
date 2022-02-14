@@ -2,24 +2,37 @@ package sa.hafralbatin.covid19.restController;
 
 
 
+
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import sa.hafralbatin.covid19.exceptions.email.emailAddException;
 import sa.hafralbatin.covid19.exceptions.email.emailErrorResponse;
 import sa.hafralbatin.covid19.exceptions.email.emailNotFoundException;
-import sa.hafralbatin.covid19.model.Governorates;
 import sa.hafralbatin.covid19.model.email;
 import sa.hafralbatin.covid19.service.Impl.GovernoratesServiceImpl;
 import sa.hafralbatin.covid19.service.Impl.emailServiceImpl;
 
 
 
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.NoSuchElementException;
+
+
 @RestController
 @RequestMapping("/api/email")
+@Validated
 public class emailsRESTController {
 
 
@@ -35,11 +48,11 @@ public class emailsRESTController {
     private JavaMailSender javaMailSender;
 
     @GetMapping("/{emailId}")
-    public email getEmail(@PathVariable int emailId){
-        if(emailId <= 0 || emailId >= emailService.findAll().size())
-            throw new emailNotFoundException("Email is not found - "+emailId);
+    public ResponseEntity<email> getEmail(@Size(min = 0 , max = 500 , message = "inside @Size") @PathVariable int emailId){
+//        if(emailId <= 0 || emailId >= emailService.findAll().size())
+//            throw new emailNotFoundException("Email is not found - "+ emailId);
 
-        return emailService.findById(emailId);
+        return ResponseEntity.ok(emailService.findById(emailId));
 
     }
 
@@ -84,6 +97,18 @@ public class emailsRESTController {
         message.setSubject("Testing Mail API");
         message.setText("Testing number 1 send");
         javaMailSender.send(message);
+    }
+
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<emailErrorResponse> handleConstraintViolation(
+            ConstraintViolationException ex) {
+        emailErrorResponse errorResponse = new emailErrorResponse();
+        errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
+        errorResponse.setMessage(ex.getMessage());
+        errorResponse.setTimeStamp(System.currentTimeMillis());
+        return new ResponseEntity<>(errorResponse,HttpStatus.BAD_REQUEST);
     }
 
 

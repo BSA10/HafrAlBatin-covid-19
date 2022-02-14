@@ -16,6 +16,9 @@ public interface dailyCasesService {
 
     dailyCases findById(int dailyCasesId);
 
+    dailyCases getLastOne(String nameEn);
+    List<dailyCases> getLastOneByDate();
+
 
 
 }

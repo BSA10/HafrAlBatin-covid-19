@@ -1,12 +1,14 @@
 package sa.hafralbatin.covid19.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 
 @Data @AllArgsConstructor @NoArgsConstructor
@@ -20,8 +22,11 @@ public class Governorates implements Serializable {
     private int id;
     @Column(name = "name_en")
     private String name_en;
+
+
     @Column(name = "name_ar")
     private String name_ar;
+
     @Column(name = "region_en")
     private String region_en;
     @Column(name = "region_ar")

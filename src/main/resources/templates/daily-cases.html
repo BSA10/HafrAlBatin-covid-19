@@ -23,33 +23,152 @@
         <hr class="line">
     </nav>
 
-    <div class="tableFixHead">
-        <table class="table ">
-            <thead class="table-dark ">
-            <tr>
-                <th >التاريخ</th>
-                <th>الفحوصات</th>
-                <th>التعافي</th>
-                <th>الوفيات</th>
-                <th>الحالات</th>
-                <th>المحافظة</th>
-                <th>ID</th>
-            </tr>
-            </thead>
+<!--    <div class="tableFixHead">-->
+<!--&lt;!&ndash;        <table class="table ">&ndash;&gt;-->
+<!--&lt;!&ndash;            <thead class="table-dark ">&ndash;&gt;-->
+<!--&lt;!&ndash;            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th >التاريخ</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>الفحوصات</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>التعافي</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>الوفيات</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>الحالات</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>المدينة</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>ID</th>&ndash;&gt;-->
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;            </thead>&ndash;&gt;-->
 
-            <tbody  th:each="case : ${cases}">
-                    <td th:text="${case.reported_at}">
-                    <td th:text="${case.tested}">
-                    <td th:text="${case.recovered}">
-                    <td th:text="${case.deaths}">
-                    <td th:text="${case.confirmed}">
-                    <td th:text="${case.name_ar}">
-                    <td th:text="${case.ID}">
-            </tbody>
+<!--&lt;!&ndash;            <tbody  th:each="case : ${cases}">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td th:text="${case.reported_at}">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td th:text="${case.tested}">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td th:text="${case.recovered}">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td th:text="${case.deaths}">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td th:text="${case.confirmed}">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td th:text="${case.name_ar}">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td th:text="${case.ID}">&ndash;&gt;-->
+<!--&lt;!&ndash;            </tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;        </table>&ndash;&gt;-->
 
+<!--&lt;!&ndash;        <table class="table ">&ndash;&gt;-->
+<!--&lt;!&ndash;            <thead class="table-dark ">&ndash;&gt;-->
+<!--&lt;!&ndash;            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th >التاريخ</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>الفحوصات</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>التعافي</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>الوفيات</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>الحالات</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>المدينة</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>ID</th>&ndash;&gt;-->
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;            </thead>&ndash;&gt;-->
 
+<!--&lt;!&ndash;            <tbody  th:each="case : ${cases}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.reported_at}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.tested}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.recovered}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.deaths}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.confirmed}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.name_ar}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.ID}">&ndash;&gt;-->
+<!--&lt;!&ndash;            </tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;        </table>&ndash;&gt;-->
 
-        </table>
+<!--&lt;!&ndash;        <table class="table ">&ndash;&gt;-->
+<!--&lt;!&ndash;            <thead class="table-dark ">&ndash;&gt;-->
+<!--&lt;!&ndash;            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th >التاريخ</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>الفحوصات</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>التعافي</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>الوفيات</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>الحالات</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>المدينة</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                <th>ID</th>&ndash;&gt;-->
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;            </thead>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <tbody  th:each="case : ${cases}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.reported_at}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.tested}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.recovered}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.deaths}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.confirmed}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.name_ar}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <td th:text="${case.ID}">&ndash;&gt;-->
+<!--&lt;!&ndash;            </tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;        </table>&ndash;&gt;-->
+
+<!--    </div>-->
+
+    <div >
+            <table class="table table-borderless d-flex justify-content-center">
+
+                <tr class="d-flex flex-row-reverse justify-content-center">
+
+                    <td>
+                        <a style="color: black; text-decoration: none" th:href="@{/CasesByCity(city='Hafar Al Batin')}">
+                        <div class="border shadow bg-body m-2 px-2">
+                            <label class="label d-flex d-flex justify-content-center">حفر الباطن</label>
+                            <span class="number all-cases d-flex justify-content-center" th:text="${hafarAlbatin}"></span>
+                        </div>
+                        </a>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <a style="color: black; text-decoration: none" th:href="@{/CasesByCity(city='Al Qaysumah')}">
+                        <div class="border shadow bg-body m-2 px-2">
+                            <label class="label d-flex d-flex justify-content-center">القيصومة</label>
+                            <span class="number all-cases d-flex justify-content-center" th:text="${Qaysumah}"></span>
+                        </div>
+                        </a>
+                    </td>
+                    <td >
+                        <a style="color: black; text-decoration: none" th:href="@{/CasesByCity(city='Ar Ruqʻi')}">
+                        <div class="border shadow bg-body m-2 px-2">
+                            <label class="label d-flex d-flex justify-content-center">الرقعي</label>
+                            <span class="number all-cases d-flex justify-content-center" th:text="${Rugai}"></span>
+                        </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a style="color: black; text-decoration: none" th:href="@{/CasesByCity(city='As Sufairy')}">
+                        <div class="border shadow bg-body m-2 px-2">
+                            <label class="label d-flex d-flex justify-content-center">الصفيري</label>
+                            <span class="number all-cases d-flex justify-content-center" th:text="${Sufairy}"></span>
+                        </div>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <a style="color: black; text-decoration: none" th:href="@{/CasesByCity(city='Samudah')}">
+                        <div class="border shadow bg-body m-2 px-2">
+                            <label class="label d-flex d-flex justify-content-center">سامودة</label>
+                            <span class="number all-cases d-flex justify-content-center" th:text="${Samudah}"></span>
+                        </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a style="color: black; text-decoration: none" th:href="@{/CasesByCity(city='As Suʻayyirah')}">
+                        <div class="border shadow bg-body m-2 px-2">
+                            <label class="label d-flex d-flex justify-content-center">السعيرة</label>
+                            <span class="number all-cases d-flex justify-content-center" th:text="${Suayyirah}"></span>
+                        </div>
+                        </a>
+                    </td>
+
+                    <td colspan="3">
+                        <a style="color: black; text-decoration: none" th:href="@{/CasesByCity(city='Adh Dhibiyyah')}">
+                        <div class="border shadow bg-body m-2 px-2">
+                            <label class="label d-flex d-flex justify-content-center">الذيبية</label>
+                            <span class="number all-cases d-flex justify-content-center" th:text="${Dhibiyyah}"></span>
+                        </div>
+                        </a>
+                    </td>
+                </tr>
+
+            </table>
 
 
     </div>

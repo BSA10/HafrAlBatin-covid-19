@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All the Cases</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--    <script src="js/hijri.js"></script>-->
+
+
+</head>
+<body>
+
+<div class="container">
+
+
+        <div class="tableFixHead">
+            <table class="table table-hover">
+                <thead class="table-dark ">
+                <tr class="text-center">
+                    <th > المدينة</th>
+                    <th >الحالات</th>
+                    <th>الوفيات</th>
+                    <th>التعافي</th>
+                    <th>الفحوصات</th>
+                    <th >التاريخ بالميلادي</th>
+                    <th >التاريخ بالهجري</th>
+                </tr>
+                </thead>
+
+                <tbody  class="" th:each="case : ${cases}">
+                <tr class="">
+                    <td th:text="${case.name_ar}">
+                    <td th:text="${case.confirmed}">
+                    <td th:text="${case.deaths}">
+                    <td th:text="${case.recovered}">
+                    <td th:text="${case.tested}">
+                    <td th:text="${case.reported_at}">
+                    <td>
+                        <script th:inline="javascript">
+                            /*<![CDATA[*/
+
+                            var message = /*[[${case.reported_at}]]*/ 'default';
+                            var da = new Date(message).toLocaleDateString('ar-SA');
+                            document.write(da)
+                            /*]]>*/
+                        </script>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+</div>
+
+</body>
+</html>

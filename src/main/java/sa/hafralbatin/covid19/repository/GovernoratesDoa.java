@@ -1,4 +1,4 @@
-package sa.hafralbatin.covid19.doa;
+package sa.hafralbatin.covid19.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -6,13 +6,18 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+
+
 </head>
 <body>
 
 
 <div class="container">
 
-    <div class="d-flex justify-content-center pt-5 pr-5">
+    <div class="d-flex justify-content-center pt-5 ">
         <span class="logo">حفر الباطن</span>
     </div>
     <hr class="line">
@@ -20,6 +25,7 @@
 
 
     <div th:with="governorates=${Governorates}">
+
         <div class="d-flex flex-row-reverse justify-content-center">
 
                 <div class="border border-data shadow bg-body m-2">
@@ -40,6 +46,14 @@
                 <label class="label d-flex justify-content-center">النشطة</label>
                 <span class="number active-cases d-flex justify-content-center" th:text="${governorates.TotalActive}"></span>
             </div>
+        </div>
+        <hr class="line">
+        <div class="d-flex flex-row-reverse justify-content-center">
+            <div class="border border-data shadow bg-body m-2">
+                <label class="label d-flex justify-content-center">اليوم</label>
+                <span class="number death-cases d-flex justify-content-center" th:text="${lastCase}"></span>
+            </div>
+
         </div>
     </div>
 

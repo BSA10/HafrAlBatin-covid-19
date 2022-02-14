@@ -105,7 +105,7 @@ td {
 
 .tableFixHead {
     overflow-y: auto;
-    height: 500px;
+    height: 600px;
 }
 .tableFixHead thead th {
     position: sticky;

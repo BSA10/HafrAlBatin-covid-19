@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor @NoArgsConstructor
@@ -19,7 +20,7 @@ public class dailyCases implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
-    private String plc_code;
+    private String Place_Code;
     private String REG_CODE;
     private String GOV_CODE;
     private String PlaceName_AR;
@@ -36,6 +37,6 @@ public class dailyCases implements Serializable {
     private int recovered;
     private int tested;
     private int newadded;
-    private String reported_at;
+    private Date reported_at;
 
 }

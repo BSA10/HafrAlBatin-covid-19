@@ -2,7 +2,7 @@ package sa.hafralbatin.covid19.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sa.hafralbatin.covid19.doa.emailDAO;
+import sa.hafralbatin.covid19.repository.emailDAO;
 import sa.hafralbatin.covid19.model.email;
 import sa.hafralbatin.covid19.service.emailService;
 

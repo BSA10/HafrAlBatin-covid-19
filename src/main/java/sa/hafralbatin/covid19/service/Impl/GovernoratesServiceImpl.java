@@ -3,9 +3,8 @@ package sa.hafralbatin.covid19.service.Impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import sa.hafralbatin.covid19.doa.GovernoratesDoa;
+import sa.hafralbatin.covid19.repository.GovernoratesDoa;
 import sa.hafralbatin.covid19.model.Governorates;
 import sa.hafralbatin.covid19.service.GovernoratesService;
 
@@ -25,7 +24,7 @@ public class GovernoratesServiceImpl implements GovernoratesService {
     }
 
     @Override
-    @Cacheable
+//    @Cacheable
     public List<Governorates> getAll() {
         return governoratesDoa.findAll();
     }
