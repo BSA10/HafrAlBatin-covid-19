@@ -31,12 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-
-### Properties ###
-src/main/resources/data.properties
-
-
-### Classes ###
-**/ChangeDateFromLongToDate.java
-mainTest.java
