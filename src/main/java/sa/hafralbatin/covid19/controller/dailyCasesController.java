@@ -1,9 +1,5 @@
 package sa.hafralbatin.covid19.controller;
 
-import org.joda.time.Chronology;
-import org.joda.time.LocalDate;
-import org.joda.time.chrono.ISOChronology;
-import org.joda.time.chrono.IslamicChronology;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import sa.hafralbatin.covid19.model.dailyCases;
 import sa.hafralbatin.covid19.service.Impl.dailyCasesServiceImpl;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 

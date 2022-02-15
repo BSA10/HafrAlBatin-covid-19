@@ -1,14 +1,10 @@
 package sa.hafralbatin.covid19.restController;
-
-import com.fasterxml.jackson.annotation.OptBoolean;
 import org.joda.time.Chronology;
 import org.joda.time.LocalDate;
 import org.joda.time.chrono.ISOChronology;
 import org.joda.time.chrono.IslamicChronology;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -21,7 +17,6 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -109,13 +104,11 @@ public class dailyCasesRestController {
         boolean reportedAtIsTheSame = allDailyCases.stream().anyMatch(rep -> rep.getReported_at().getTime() == DailyCase.getReported_at().getTime()
                                                                             && rep.getName_en().equals(DailyCase.getName_en()));
 
-
-
         if(reportedAtIsTheSame){
-            System.out.println("["+ (inDatabase++) +"] It's in the database." + "[ "+DailyCase.getName_en()+" - "+DailyCase.getConfirmed()+" - "+DailyCase.getReported_at()+" ]");
+//            System.out.println("["+ (inDatabase++) +"] It's in the database." + "[ "+DailyCase.getName_en()+" - "+DailyCase.getConfirmed()+" - "+DailyCase.getReported_at()+" ]");
         }
         else {
-            System.out.println("["+ (outDatabase++) +"] It's out the database." + "[ "+DailyCase.getName_en()+" - "+DailyCase.getConfirmed()+" - "+DailyCase.getReported_at()+" ]");
+//            System.out.println("["+ (outDatabase++) +"] It's out the database." + "[ "+DailyCase.getName_en()+" - "+DailyCase.getConfirmed()+" - "+DailyCase.getReported_at()+" ]");
             addDailyCase(DailyCase);
         }
 

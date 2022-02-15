@@ -7,9 +7,6 @@ import org.joda.time.chrono.IslamicChronology;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.scheduling.annotation.Schedules;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,14 +34,11 @@ public class GovernoratesController {
 
     @GetMapping("/")
     public String index(Model model){
-        
+
         List<Governorates> governoratesList = governoratesService.getAll();
         dailyCases lastCase = dailyCasesService.getLastOne("Hafar al Batin");
 
         List<dailyCases> lastCasesByDates = dailyCasesService.getLastOneByDate();
-
-
-
         Governorates governorates = governoratesList.get(governoratesList.size()-1);
 
         SimpleDateFormat format = new SimpleDateFormat("HH:mm a");

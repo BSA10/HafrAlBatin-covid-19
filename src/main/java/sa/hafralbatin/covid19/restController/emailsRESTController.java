@@ -1,17 +1,12 @@
 package sa.hafralbatin.covid19.restController;
 
-
-
-
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import sa.hafralbatin.covid19.exceptions.email.emailAddException;
 import sa.hafralbatin.covid19.exceptions.email.emailErrorResponse;
@@ -20,14 +15,8 @@ import sa.hafralbatin.covid19.model.email;
 import sa.hafralbatin.covid19.service.Impl.GovernoratesServiceImpl;
 import sa.hafralbatin.covid19.service.Impl.emailServiceImpl;
 
-
-
-import javax.validation.Valid;
 import javax.validation.constraints.Size;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.NoSuchElementException;
+
 
 
 @RestController
@@ -64,28 +53,6 @@ public class emailsRESTController {
         if(!email.getEmails().matches("^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$"))
             emailService.create(email);
     }
-
-//    @PostMapping("/sendToEmails") // handle all the emails and send them the data OneByOne
-//    public void sendToEmails(){
-//
-//        Governorates governorates = governoratesService.getAll().get(governoratesService.getAll().size()-1);
-//        for (int i = 1; i <= emailService.findAll().size(); i++) {
-//            email tempEmail = emailService.findById(i);
-//            String message = "Hafar Albatin Status \n"
-//                            +"\nTotal Confirmed: " +governorates.getTotalConfirmed()
-//                            +"\nTotal Deaths: " +governorates.getTotalDeaths()
-//                            +"\nTotal Active: " +governorates.getTotalActive()
-//                            +"\nTotal Recovered: " +governorates.getTotalRecovered();
-//            Email email = EmailBuilder.startingBlank()
-//                    .from("BASSAM", "so-ld@hotmail.com")
-//                    .to(tempEmail.getName(), tempEmail.getEmails())
-//                    .withSubject("Hafar Albatin Covid19 Status")
-//                    .withPlainText(message)
-//                    .buildEmail();
-//            mailerBuild.sendMail(email);
-//        }
-//
-//    }
 
 
     // testing the speed between the two //
